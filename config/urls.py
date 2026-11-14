@@ -1,0 +1,33 @@
+from django.contrib import admin
+from django.urls import path
+from core import views
+urlpatterns = [
+ path("admin/", admin.site.urls),
+ path("", views.home, name="home"),
+ path("accounts/login/", views.login_view, name="login"),
+ path("accounts/logout/", views.logout_view, name="logout"),
+ path("dashboard/", views.dashboard, name="dashboard"),
+ path("organizations/", views.organizations, name="organizations"),
+ path("organizations/add/", views.organization_add, name="organization_add"),
+ path("periods/", views.periods, name="periods"),
+ path("statements/", views.statements, name="statements"),
+ path("statements/import/", views.import_statement, name="import_statement"),
+ path("statements/sample/", views.sample_csv, name="sample_csv"),
+ path("ratios/", views.ratios, name="ratios"),
+ path("calculators/", views.calculators, name="calculators"),
+ path("models/", views.models_view, name="models"),
+ path("valuation/", views.valuation, name="valuation"),
+ path("budgets/", views.budgets, name="budgets"),
+ path("cashflow/", views.cashflow, name="cashflow"),
+ path("profitability/", views.profitability, name="profitability"),
+ path("investments/", views.investments, name="investments"),
+ path("risks/", views.risks, name="risks"),
+ path("kpis/", views.kpis, name="kpis"),
+ path("research/", views.research, name="research"),
+ path("reports/", views.reports, name="reports"),
+ path("reports/export/<str:kind>/", views.export_report, name="export_report"),
+ path("assistant/", views.assistant, name="assistant"),
+ path("clients/", views.clients, name="clients"),
+ path("documents/", views.documents, name="documents"),
+ path("audit/", views.audit_log, name="audit"),
+]
